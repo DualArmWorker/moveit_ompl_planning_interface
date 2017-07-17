@@ -6,8 +6,9 @@ if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
 endif()
 
 find_package(Boost REQUIRED system filesystem date_time thread serialization)
+find_package(OMPL REQUIRED) # add this because OMPL is not a catkin package
 find_package(catkin REQUIRED COMPONENTS
-  ompl
+#  ompl # is not a package
   moveit_core
   moveit_ros_planning
   moveit_msgs
@@ -27,7 +28,7 @@ catkin_package(
   INCLUDE_DIRS
     ompl_interface/include
   CATKIN_DEPENDS
-    ompl
+    #  ompl # is not a package
     moveit_core
     moveit_ros_planning
     moveit_msgs
